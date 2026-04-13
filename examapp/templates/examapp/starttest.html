@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Question</title>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+
+<body>
+    <div class="exam-container">
+        <header>
+            <div class="header-top">
+                <span class="username">👤 {{request.session.username}}</span>
+            </div>
+            <hr>
+            <span class="message">{{msg}}</span>
+
+            
+            <div class="progress-container">
+                <span class="progress-text">
+                    Question {{question.qno}} 
+                </span>
+            </div>
+        </header>
+
+        <main>
+            <form >
+                
+                <input type="hidden" name="qno" value="{{question.qno}}">
+                <input type="hidden" name="qtext" value="{{question.qtext}}">
+                <input type="hidden" name="answer" value="{{question.ans}}">
+                <input type="hidden" name="subject" value="{{question.subject}}">
+                
+
+                <div class="question-box">
+                    <p class="qtext">{{question.qno}}: {{question.qtext}}</p>
+                    
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="op" value="{{question.op1}}"> {{question.op1}}
+                        </label>
+                        <label>
+                            <input type="radio" name="op" value="{{question.op2}}"> {{question.op2}}
+                        </label>
+                        <label>
+                            <input type="radio" name="op" value="{{question.op3}}"> {{question.op3}}
+                        </label>
+                        <label>
+                            <input type="radio" name="op" value="{{question.op4}}"> {{question.op4}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <input type="submit" value="⏮ Previous" formaction="/examapp/previousquestion/">
+                    <input type="submit" value="⏭ Next" formaction="/examapp/nextquestion/">
+                    <input type="submit" id="endExamBtn" value="⏹ End Exam" formaction="/examapp/endtest/" class="end-btn">
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

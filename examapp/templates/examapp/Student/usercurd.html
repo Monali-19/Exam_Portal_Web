@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+</head>
+
+<body>
+    <a href="/examapp/givemeragister/">Add User</a>&nbsp;&nbsp;&nbsp;
+    <a href="">Show User</a>&nbsp;&nbsp;&nbsp;
+    <a href="">Update User</a>&nbsp;&nbsp;&nbsp;
+    <a href="">Delete User</a>&nbsp;&nbsp;&nbsp;
+    <a href="/examapp/showalluser/">Show All User</a>
+    <a href="/examapp/">Home Page</a>
+
+    <hr>
+    <form>
+        username : <input type="text" name="username" placeholder="Enter your username" value="{{udata.username}}"><br>
+        <br>
+        pasword : <input type="text" name="password" placeholder="Enter your password" value="{{udata.password}}"> <br>
+        <br>
+        mobno : <input type="tel" name="mobno" placeholder="Enter your mobile number" value="{{udata.mobno}}"> <br><br>
+        <br>
+        <input type="submit" value="Add user" formaction="/examapp/adduser/"> &nbsp;&nbsp;
+        <input type="submit" value="Show User" formaction="/examapp/showuser/"> &nbsp;&nbsp;
+        <input type="submit" value="Update User" formaction="/examapp/updateuser/"> &nbsp;&nbsp;
+        <input type="submit" value="Delete User" formaction="/examapp/deleteuser/"> &nbsp;&nbsp;
+        <input type="submit" value="ShowAll User" formaction="/examapp/showalluser/">
+
+
+    </form>
+    <span>{{message}}</span>
+</body>
+</html>
+

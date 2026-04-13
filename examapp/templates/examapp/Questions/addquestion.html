@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Add Question</title>
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/questions.css' %}">
+
+</head>
+
+<body>
+   <a href="/examapp/giveaddquestion/"> Add Question</a> &nbsp; &nbsp; 
+    <a href="/examapp/giveviewquestion/">View Question</a> &nbsp; &nbsp; 
+    <a href="/examapp/giveupdatequestion/"> Update Question</a> &nbsp; &nbsp; 
+    <a href="/examapp/givedeletequestion/"> Delete Question</a> &nbsp; &nbsp;
+    <a href="/examapp/givemeshowallquestion/"> Show All Questions</a> &nbsp; &nbsp;
+    <a href="/examapp/">Home Page</a>
+
+
+  <hr>
+
+  <form method="POST">
+    {% csrf_token %}
+    <input type="number" name="qno" placeholder="Enter Question Number" />
+    <input type="text" name="qtext" placeholder="Enter Question Text" />
+    <input type="text" name="op1" placeholder="Enter Option 1" />
+    <input type="text" name="op2" placeholder="Enter Option 2" />
+    <input type="text" name="op3" placeholder="Enter Option 3" />
+    <input type="text" name="op4" placeholder="Enter Option 4" />
+    <input type="text" name="subject" placeholder="Enter Subject" />
+    <input type="text" name="answer" placeholder="Enter Answer" />
+
+    <input type="submit" value="Add Questions" formaction="/examapp/addquestion/" />
+  </form>
+
+  <span>{{message}}</span>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+
+    <div class="glass-card">
+        <h1 id="f1">Online Exam System</h1>
+        <p class="subtitle">Manage Questions, Students & Results Easily</p>
+
+        <form>
+            <input type="submit" value="📚 Question Operation" formaction="/examapp/givemequestioncurd/">
+            <input type="submit" value="👨‍🎓 Student Operation" formaction="/examapp/givemeusercurd/">
+            <input type="submit" value="🔐 Student Login" formaction="/examapp/givemelogin/">
+            <input type="submit" value="📊 Student Result" formaction="/examapp/showallresult/">
+        </form>
+    </div>
+
+</body>
+</html>

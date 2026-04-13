@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View question</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/questions.css' %}">
+
+</head>
+
+<body>
+     <a href="/examapp/giveaddquestion/"> Add Question</a> &nbsp; &nbsp; 
+    <a href="/examapp/giveviewquestion/">View Question</a> &nbsp; &nbsp; 
+    <a href="/examapp/giveupdatequestion/"> Update Question</a> &nbsp; &nbsp; 
+    <a href="/examapp/givedeletequestion/"> Delete Question</a> &nbsp; &nbsp;
+    <a href="/examapp/givemeshowallquestion/"> Show All Questions</a> &nbsp; &nbsp;
+    <a href="/examapp/">Home Page</a>
+
+    <hr>
+
+    <form>
+        qno : <input type="number" name="qno" placeholder="Enter Question number" value="{{qdata.qno}}"> <br><br>
+        qtext : <input type="text" name="qtext" placeholder="Enter Qjuestion text" value="{{qdata.qtext}}"> <br><br>
+        op1 :<input type="text" name="op1" placeholder="Enter option 1" value="{{qdata.op1}}"> <br><br>
+        op2 :<input type="text" name="op2" placeholder="Enter option 2" value="{{qdata.op2}}"> <br><br>
+        op3 :<input type="text" name="op3" placeholder="Enter option 3" value="{{qdata.op3}}"> <br><br>
+        op4 :<input type="text" name="op4" placeholder=" Enter option 4" value="{{qdata.op4}}"> <br><br>
+        subject :<input type="text" name="subject" placeholder="Enter subject" value="{{qdata.subject}}"> <br><br>
+        ans : <input type="text" name="answer" placeholder="Enter answer" value="{{qdata.ans}}"> <br><br>
+
+        <input type="submit" value="View Questions" formaction="/examapp/viewquestion/">
+
+
+    </form> <br><br>
+    <span>{{message}}</span>
+</body>
+
+</html>

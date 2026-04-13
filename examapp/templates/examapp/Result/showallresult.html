@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 3px solid red;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+</head>
+
+<body>
+
+    <button ><a href="/examapp/logoutuser1/">Logout</a></button>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Subject</th>
+            <th>score</th>
+        </tr>
+        {% for rd in rdb %}
+        <tr>
+            <td>{{rd.username.username}}</td>
+            <td>{{rd.subject}}</td>
+            <td>{{rd.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

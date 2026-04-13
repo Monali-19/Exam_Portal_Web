@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 3px solid red;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+</head>
+
+<body>
+    <a href="/examapp/givemeragister/">Add User</a>&nbsp;&nbsp;&nbsp;
+    <a href="">Show User</a>&nbsp;&nbsp;&nbsp;
+    <a href="">Update User</a>&nbsp;&nbsp;&nbsp;
+    <a href="">Delete User</a>&nbsp;&nbsp;&nbsp;
+    <a href="/examapp/showalluser/">Show All User</a>
+    <a href="/examapp/">Home Page</a>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>password</th>
+            <th>mobile no</th>
+            <th>Delete User</th>
+        </tr>
+        {% for ud in udata %}
+        <tr>
+            <td>{{ud.username}}</td>
+            <td>{{ud.password}}</td>
+            <td>{{ud.mobno}}</td>
+            <td><a href="/examapp/deleteusershowall/?username={{ud.username}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
